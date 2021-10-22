@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mustang Mini App', 
-      theme: ThemeData.light(),
+      theme: ThemeData.dark(),
       home: const MyHomePage(title: 'Mustang Mini App')
     );
   }
@@ -26,10 +26,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-int currentIndex = 0;
-
-
-
 
   Widget build(BuildContext context) {
 
@@ -42,9 +38,9 @@ int currentIndex = 0;
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            // SizedBox(
-            //   height: 20,
-            // ),
+            SizedBox(
+              height: 20,
+            ),
             Image.asset(
               'assets/logo.png', 
               width: 200,
@@ -77,11 +73,7 @@ int currentIndex = 0;
             icon: Icon(Icons.visibility),
             label: 'Scouting',
           ),
-        ],
-        onTap: (int index) {
-          currentIndex = index;
-          print(currentIndex);
-        }
+        ], 
       ),
     );
   }
