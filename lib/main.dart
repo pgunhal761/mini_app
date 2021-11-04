@@ -1,6 +1,13 @@
 //import 'dart:html';
 
+// ignore: unused_import
+import 'dart:convert' as convert;
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import "_ViewData.dart";
+// ignore: unused_import
+import 'package:http/http.dart' as http;
 
 void main() => runApp(MyApp());
 
@@ -11,7 +18,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Mustang Mini App', 
       theme: ThemeData.dark(),
-      home: const MyHomePage(title: 'Mustang Mini App')
+      // home: Navigator(
+      //   pages: [
+      //     MaterialPage(child: MyHomePage(title: 'Mustang Mini App')),
+      //     MaterialPage(child: ViewData(title: "Hello")),
+
+      //   ],
+      //   onPopPage: (route, result) {
+      //     return route.didPop(result);
+      //   }
+      // )
+      home: const MyHomePage(title: 'Mustang Mini App'),
+      routes: <String, WidgetBuilder> {
+        //'/a': (BuildContext context) => ViewData(title: 'Scouting Data', eventCode: 'rAma'),
+      }
+
+
     );
   }
 }
@@ -26,6 +48,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final myController = TextEditingController();
+
+  void dispose() {
+    myController.dispose();
+    super.dispose();
+  }
+
 
   Widget build(BuildContext context) {
 
@@ -48,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
               fit: BoxFit.cover,
             ),
             TextField(
+              controller: myController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'Event code',
@@ -57,13 +87,27 @@ class _MyHomePageState extends State<MyHomePage> {
               style: (
                 ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20))
               ),
-              onPressed: () {}, 
+               onPressed: () { 
+                // Navigator.pushNamed(context, '/a');
+                 Navigator.push(
+                   context, 
+                   MaterialPageRoute(
+                      builder: (context) => ViewData(eventCode: myController.text),
+                   )
+                );
+             }, 
               child: const Text('Get Data')
             )
           ]
         ),
       ),
-        bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
+        // onTap: Navigator.push(
+        //            context, 
+        //            MaterialPageRoute(
+        //               builder: (context) => ViewData(title: "krishna", eventCode: myController.text),
+        //            ),
+        //            ),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.stacked_line_chart),
@@ -79,3 +123,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+
+// Future<Album> fetchAlbum() async {
+//   http.Response response = await http.get(Uri.parse('https://www.thebluealliance.com/api/v3/teams/0'));
+
+//  }
+ 
