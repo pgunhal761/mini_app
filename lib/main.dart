@@ -2,12 +2,13 @@
 
 // ignore: unused_import
 import 'dart:convert' as convert;
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import "_ViewData.dart";
 // ignore: unused_import
 import 'package:http/http.dart' as http;
+import 'Practice.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       // )
       home: const MyHomePage(title: 'Mustang Mini App'),
       routes: <String, WidgetBuilder> {
-        //'/a': (BuildContext context) => ViewData(title: 'Scouting Data', eventCode: 'rAma'),
+        //'/a': (BuildContext context) => ViewData(title: 'Scouting Data', eventCode: 'helloWorld'),
       }
 
 
@@ -92,7 +93,8 @@ class _MyHomePageState extends State<MyHomePage> {
                  Navigator.push(
                    context, 
                    MaterialPageRoute(
-                      builder: (context) => ViewData(eventCode: myController.text),
+                     // builder: (context) => ViewData(eventCode: myController.text),
+                       builder: (context) => MyCustomForm(),
                    )
                 );
              }, 
@@ -105,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // onTap: Navigator.push(
         //            context, 
         //            MaterialPageRoute(
-        //               builder: (context) => ViewData(title: "krishna", eventCode: myController.text),
+        //               builder: (context) => ViewData(title: "hiThere", eventCode: myController.text),
         //            ),
         //            ),
         items: const <BottomNavigationBarItem>[
