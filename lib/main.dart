@@ -8,7 +8,9 @@ import 'package:flutter/material.dart';
 import "_ViewData.dart";
 // ignore: unused_import
 import 'package:http/http.dart' as http;
-import 'Practice.dart';
+//ignore: unused_import
+
+import "form.dart";
 
 void main() => runApp(MyApp());
 
@@ -29,6 +31,7 @@ class MyApp extends StatelessWidget {
       //     return route.didPop(result);
       //   }
       // )
+     // home: const ViewData(eventCode: 'helothere'),
       home: const MyHomePage(title: 'Mustang Mini App'),
       routes: <String, WidgetBuilder> {
         //'/a': (BuildContext context) => ViewData(title: 'Scouting Data', eventCode: 'helloWorld'),
@@ -89,14 +92,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20))
               ),
                onPressed: () { 
-                // Navigator.pushNamed(context, '/a');
+                 if(num.tryParse(myController.text).toString().compareTo("null") != 0) {
+                   // Navigator.pushNamed(context, '/a');
                  Navigator.push(
                    context, 
                    MaterialPageRoute(
-                     // builder: (context) => ViewData(eventCode: myController.text),
-                       builder: (context) => MyCustomForm(),
-                   )
-                );
+                      builder: (context) => FormList(eventCode: num.tryParse(myController.text).toString()),
+                      )
+                     //  builder: (context) => MyCustomForm(),
+                   );
+                 }
              }, 
               child: const Text('Get Data')
             )
