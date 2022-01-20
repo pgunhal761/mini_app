@@ -9,6 +9,10 @@ class FormData {
 
   var multiSelect = {'q1': null, 'q2': null, 'q4': null};
 
+  var radioInput = {'q8': null, 'q9' : null, 'q10': null};
+
+  var picInput = {'q3' : null, 'q11.5': null, 'q15' : null};
+
 
   //OK  print(textInput["q14"]);
   //OK  textInput["q14"] = "Hello";
@@ -23,6 +27,11 @@ class FormData {
   void enterMultiSelect(String index, MultiSelectItem m) {
     //work with multiselect items properly ? maybe use other data type
     //multiSelect[index] = m;
+  }
+
+//Object will be photo
+    void enterPhoto(String index, Object m) {
+      
   }
 
 
