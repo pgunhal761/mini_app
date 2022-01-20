@@ -1,12 +1,34 @@
-import 'form.dart';
+
+// ignore: unused_import
+import 'package:multi_select_flutter/multi_select_flutter.dart';
+
+
+class FormData {
+  var textInput = {'q5' : "", 'q6': "", 'q7': "", 'q11': "", 'q12': "", 'q13': "",
+   'q14': "", 'q16': "", 'q17': "", 'q18': ""};
+
+  var multiSelect = {'q1': null, 'q2': null, 'q4': null};
+
+
+  //OK  print(textInput["q14"]);
+  //OK  textInput["q14"] = "Hello";
+  //OK  textInput["q20"] = "Hi";
+
+  /// Fills the specified index with the specified value
+  /// @pre index must be a vaild question number that takes text input
+  void enterText(String index, String ans) {
+    textInput[index] = ans;
+  }
+
+  void enterMultiSelect(String index, MultiSelectItem m) {
+    //work with multiselect items properly ? maybe use other data type
+    //multiSelect[index] = m;
+  }
 
 
 
-class formData {
 
-//TODO fill with data from the form 
-//maybe methods to set the value of fields
-//or create a new instance of this class for each question (not recommended)
+
 
 
 

@@ -1,8 +1,5 @@
-// ignore: avoid_web_libraries_in_flutter
-//import 'dart:html';
 
 import 'package:flutter/material.dart';
-// ignore: unused_import
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 
 class FormList extends StatefulWidget {
@@ -19,7 +16,7 @@ class _FormList extends State<FormList> {
   final String eventCode;
   final myController = TextEditingController();
   int val = -1; 
-  bool _value = false;
+  // bool _value = false;
 
   void dispose() {
     myController.dispose();
@@ -32,13 +29,10 @@ class _FormList extends State<FormList> {
   @override
   Widget build(BuildContext context) {
 
-    BallCapability? _ball = BallCapability.one;
+    BallCapability? _ball;
     ClimbCapability? _climb = ClimbCapability.low;
     Endgame? _action = Endgame.park;
 
-      List<Attribute>? _selectedAttribute = [
-
-      ];
      List<Attribute> _attribute = [
     Attribute(id: 1, name: "Navigation"),
     Attribute(id: 2, name: "Height"),
@@ -248,6 +242,7 @@ class _FormList extends State<FormList> {
              leading: Radio<BallCapability>(
                value: BallCapability.one,
                groupValue: _ball,
+                toggleable: true,
                 onChanged: (BallCapability? value) {
               setState(() {
                 _ball = value;
@@ -259,7 +254,8 @@ class _FormList extends State<FormList> {
              title: const Text('2'),
              leading: Radio<BallCapability>(
                value: BallCapability.two,
-               groupValue: _ball,
+               groupValue: _ball, 
+               toggleable: true, 
                 onChanged: (BallCapability? value) {
               setState(() {
                 _ball = value;
@@ -271,7 +267,8 @@ class _FormList extends State<FormList> {
              title: const Text('3'),
              leading: Radio<BallCapability>(
                value: BallCapability.three,
-               groupValue: _ball,
+               groupValue: _ball, 
+               toggleable: true,
                 onChanged: (BallCapability? value) {
               setState(() {
                 _ball = value;
@@ -283,7 +280,8 @@ class _FormList extends State<FormList> {
              title: const Text('4'),
              leading: Radio<BallCapability>(
                value: BallCapability.four,
-               groupValue: _ball,
+               groupValue: _ball, 
+               toggleable: true,
                 onChanged: (BallCapability? value) {
               setState(() {
                 _ball = value;
@@ -295,7 +293,8 @@ class _FormList extends State<FormList> {
              title: const Text('5'),
              leading: Radio<BallCapability>(
                value: BallCapability.five,
-               groupValue: _ball,
+               groupValue: _ball, 
+               toggleable: true,
                 onChanged: (BallCapability? value) {
               setState(() {
                 _ball = value;
@@ -306,8 +305,9 @@ class _FormList extends State<FormList> {
            ListTile(
              title: const Text('More than five'),
              leading: Radio<BallCapability>(
-               value: BallCapability.five,
-               groupValue: _ball,
+               value: BallCapability.more,
+               groupValue: _ball, 
+               toggleable: true,
                 onChanged: (BallCapability? value) {
               setState(() {
                 _ball = value;
@@ -317,7 +317,7 @@ class _FormList extends State<FormList> {
            ),
           SizedBox(height: 20),
            Text(
-              "What is their climb capacity?",
+              "What is their endgame capacity?",
               textAlign: TextAlign.justify,
              // textScaleFactor: 2.0,
               style: TextStyle (
@@ -667,3 +667,40 @@ class ShootingCapability {
 enum BallCapability {one, two, three, four, five, more}
 enum ClimbCapability {low, middle, high, none}
 enum Endgame {park, climb, level}
+
+
+
+//msdf:
+/**
+ * 1 team strengths
+ * 2 main programming languages
+ * 4 shooting capability
+ */
+
+//text: 
+/**
+ * 5 drivebase motors
+ * 6 cool robot features
+ * 7 auton routine
+ * 11 final robot comments
+ * 12 battery capacities
+ * 13 battery charge capacity
+ * 14 new tools
+ * 16 storage pros and cons
+ * 17 pit asthetically pleasing?
+ * 18 final comments
+ */
+
+//radio box
+/**
+ * 8 ball capacity
+ * 9 endgame capacity
+ * 10 climb capacity
+ */
+
+/**
+ * photo:
+ * 3 pic of robot
+ * (11.5 additional robot pics)
+ * 15 pics of tools
+ */

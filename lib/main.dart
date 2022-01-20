@@ -1,15 +1,9 @@
-//import 'dart:html';
 
-// ignore: unused_import
+// ignore_for_file: unused_import
+
 import 'dart:convert' as convert;
 import 'formData.dart';
 import 'package:flutter/material.dart';
-// ignore: unused_import
-import "_ViewData.dart";
-// ignore: unused_import
-import 'package:http/http.dart' as http;
-//ignore: unused_import
-
 import "form.dart";
 
 void main() => runApp(MyApp());
@@ -95,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                  if(num.tryParse(myController.text).toString().compareTo("null") != 0) {
                    // Navigator.pushNamed(context, '/a');
                    //TODO keep updating params here
-                   formData f = new formData();
+                   //formData f = new formData();
                  Navigator.push(
                    context, 
                    MaterialPageRoute(
