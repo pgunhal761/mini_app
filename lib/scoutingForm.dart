@@ -14,14 +14,14 @@ class FormList extends StatefulWidget {
 class _FormList extends State<FormList> {
   //final List<TeamData> data;
   final String eventCode;
-  final myController = TextEditingController();
+  // final myController = TextEditingController();
   int val = -1; 
   // bool _value = false;
 
-  void dispose() {
-    myController.dispose();
-    super.dispose();
-  }
+  // void dispose() {
+  //   myController.dispose();
+  //   super.dispose();
+  // }
    // ignore: unused_element
    _FormList({Key? key, required this.eventCode});
   //required this.data
@@ -54,6 +54,9 @@ class _FormList extends State<FormList> {
       ShootingCapability(id: 1, name: "Lower Port"),
       ShootingCapability(id: 2, name: "Upper Port"),
     ];
+
+    List<TextEditingController> myController =
+      List.generate(10, (i) => TextEditingController());
 
   final _items = _attribute
       .map((attribute) => MultiSelectItem<Attribute>(attribute, attribute.name))
@@ -180,7 +183,7 @@ class _FormList extends State<FormList> {
               )
             ),
             TextField(
-              controller: myController,
+              controller: myController[0],
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               )
@@ -200,7 +203,7 @@ class _FormList extends State<FormList> {
 
             ),
             TextField(
-              controller: myController,
+              controller: myController[1],
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               )
@@ -219,7 +222,7 @@ class _FormList extends State<FormList> {
               )
             ),
             TextField(
-              controller: myController,
+              controller: myController[2],
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               )
@@ -439,7 +442,7 @@ class _FormList extends State<FormList> {
               )
             ),
             TextField(
-              controller: myController,
+              controller: myController[3],
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               )
@@ -493,7 +496,7 @@ class _FormList extends State<FormList> {
 
             ),
             TextField(
-              controller: myController,
+              controller: myController[4],
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               )
@@ -513,7 +516,7 @@ class _FormList extends State<FormList> {
 
             ),
             TextField(
-              controller: myController,
+              controller: myController[5],
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               )
@@ -532,7 +535,7 @@ class _FormList extends State<FormList> {
               )
             ),
             TextField(
-              controller: myController,
+              controller: myController[6],
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               )
@@ -556,7 +559,7 @@ class _FormList extends State<FormList> {
               )
             ),
             TextField(
-              controller: myController,
+              controller: myController[7],
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               )
@@ -584,7 +587,7 @@ class _FormList extends State<FormList> {
 
             ),
             TextField(
-              controller: myController,
+              controller: myController[8],
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               )
@@ -604,7 +607,7 @@ class _FormList extends State<FormList> {
 
             ),
             TextField(
-              controller: myController,
+              controller: myController[9],
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               )
