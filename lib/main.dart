@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mustang Mini App', 
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       // home: Navigator(
       //   pages: [
       //     MaterialPage(child: MyHomePage(title: 'Mustang Mini App')),
